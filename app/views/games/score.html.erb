@@ -1,0 +1,10 @@
+<h1>Results</h1>
+
+<% if @json['found'] == false %>
+  <h3>Sorry but <%= @json['word'].upcase %> does not seem to be a valid English word...</h3>
+<% end %>
+<%= @user_score.split('').each do |letter| %>
+  <%= @letters.include?(letter) %>
+<% end %>
+
+<%= link_to 'Play again', new_path%>
